@@ -21,14 +21,13 @@ int columna;
 int opcion;
 
 
-void menu();
 void generarMatriz();
 void mostrarMatriz();
 void generarTranspuesta();
 
 /**
  * @file Matriz 3x3.cpp
- * @version 1.0
+ * @version 1.1
  * @date 02/15/2024
  * @author Fabian Murillo
  * @title Matriz 3x3 y matriz transpuesta
@@ -41,50 +40,10 @@ void generarTranspuesta();
 int 
 main()
 {
-  menu();
+  generarMatriz();
+  mostrarMatriz();
+  generarTranspuesta();
   return 0;
-}
-
-/**
- * @brief Muestra el menú principal, le da al usuario diferentes opciones par Ingresar datos en la matriz 3x3, mostrar la matriz, mostrar la matriz transpuesta y salir.
- */
-void menu()
-{
-  do
-  {
-    cout << "*********************************" << endl;
-    cout << "Seleccione la opcion que desea realizar: " << endl;
-
-    cout << endl;
-
-    cout << "1-Ingresar datos para la matriz 3x3" << endl;
-    cout << "2-Mostrar la matriz 3x3" << endl;
-    cout << "3-Mostrar la matriz transpuesta" << endl;
-    cout << "4-Salir" << endl;
-    cout << "*********************************" << endl;
-
-    cin >> opcion;
-
-    switch (opcion)
-    {
-    case 1:
-      generarMatriz();
-      break;
-
-    case 2:
-      mostrarMatriz();
-      break;
-
-    case 3:
-      generarTranspuesta();
-      break;
-
-    case 4:
-      cout << "Gracias por usar este programa" << endl;
-      break;
-    }
-
-  } while (opcion != 4);
 }
 
 /**
@@ -124,6 +83,8 @@ void mostrarMatriz()
  */
 void generarTranspuesta()
 {
+  cout << "La matriz transpuesta es: " << endl;
+
   for (renglon = 0; renglon < 3; renglon++)
   {
     for (columna = 0; columna < 3; columna++)
